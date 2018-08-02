@@ -22,6 +22,7 @@
 //
 // History:
 //
+// 1.02 - hacked for dir and file return, by no means any good at javascript - sorry
 // 1.01 - updated to work with foreign characters in directory/file names (12 April 2008)
 // 1.00 - released (24 March 2008)
 //
@@ -76,7 +77,8 @@ if(jQuery) (function($){
 								$(this).parent().find('UL').slideUp({ duration: o.collapseSpeed, easing: o.collapseEasing });
 								$(this).parent().removeClass('expanded').addClass('collapsed');
 							}
-						} else {
+							
+							// return both dir and file
 							h($(this).attr('rel'));
 						}
 						return false;
