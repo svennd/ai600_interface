@@ -30,7 +30,7 @@
                                 $('#ai600_file_tree').fileTree({ script: 'connectors/ai600.php' }, function(file) {
 								
 									// check if its a directory
-									if (file.substr(file.length -1) == '/')
+									if (file.substr(file.length-1) == '/')
 									{
 										// deeper then /data/group/*
 										if (file.split('/').length > 3) 
@@ -45,14 +45,22 @@
 									}
 									else 
 									{	
-										$("#image_demo").html("<a href='zip.php?f=ai600/" + file + "'>download dir</a><br /><image src='ai600/" + file + "' class=\"img-fluid\">");
+										// only show jpg files
+										if (file.substr(file.length-3) == 'jpg')
+										{
+											$("#image_demo").html("<a href='zip.php?'f=ai600/" + file + "'>download dir</a><br /><image src='ai600/" + file + "' class=\"img-fluid\">");
+										}
+										else
+										{
+											$("#image_demo").html("<a href='zip.php?f=ai600/" + file + "'>download dir</a>");
+										}
 									}
 								});
 								
                                 $('#ai600_rgb_file_tree').fileTree({ script: 'connectors/ai600_rgb.php' }, function(file) {
                                  
 									// check if its a directory
-									if (file.substr(file.length -1) == '/')
+									if (file.substr(file.length-1) == '/')
 									{
 										// deeper then /data/group/*
 										if (file.split('/').length > 3) 
@@ -67,7 +75,14 @@
 									}
 									else 
 									{	
-										$("#image_demo").html("<a href='zip.php?'f=ai600_rgb/" + file + "'>download dir</a><br /><image src='ai600/" + file + "' class=\"img-fluid\">");
+										if (file.substr(file.length-3) == 'jpg')
+										{
+											$("#image_demo").html("<a href='zip.php?'f=ai600_rgb/" + file + "'>download dir</a><br /><image src='ai600_rgb/" + file + "' class=\"img-fluid\">");
+										}
+										else
+										{
+											$("#image_demo").html("<a href='zip.php?f=ai600_rgb/" + file + "'>download dir</a>");
+										}
 									}
 								});
 								
