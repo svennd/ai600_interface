@@ -78,6 +78,7 @@ if(jQuery) (function($){
 								$(this).parent().removeClass('expanded').addClass('collapsed');
 							}
 							
+							console.log($(this).attr('rel'))
 							// return both dir and file
 							h($(this).attr('rel'));
 						}
