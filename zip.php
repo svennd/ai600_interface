@@ -5,7 +5,7 @@ $zip    = "/data/download/download.zip";
 // $dir    = "/data/ai600/mng/SvenB 2017.11.08_09.20.47_Ch";
 
 # this should be better checked (like ../../)
-$dir    = (isset($_GET['f'])) ? $_GET['f'] : exit;
+$dir    = (isset($_GET['f'])) ? pathinfo($_GET['f'], PATHINFO_DIRNAME) : exit;
 
 # stolen from
 # https://stackoverflow.com/questions/4914750/how-to-zip-a-whole-folder-using-php
