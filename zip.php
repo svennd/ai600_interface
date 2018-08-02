@@ -5,7 +5,7 @@ $zip    = "/data/download/download.zip";
 // $dir    = "/data/ai600/mng/SvenB 2017.11.08_09.20.47_Ch";
 
 # this should be better checked (like ../../)
-$dir    = (isset $_GET['f']) ? $_GET['f'] : exit;
+$dir    = (isset($_GET['f'])) ? $_GET['f'] : exit;
 
 # stolen from
 # https://stackoverflow.com/questions/4914750/how-to-zip-a-whole-folder-using-php
@@ -44,7 +44,7 @@ function zip($source, $destination)
 }
 
 # create zip
-zip($dir, $zip);
+zip('/data/' . $dir, $zip);
 
 # send it
 header("Content-type: application/zip");
@@ -53,4 +53,4 @@ header("Content-length: " . filesize($zip));
 header("Pragma: no-cache");
 header("Expires: 0");
 readfile($zip);
-
+unlink($zip);
