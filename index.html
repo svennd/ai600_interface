@@ -27,7 +27,7 @@
                         $(document).ready( function() {
 
 								// file selectors
-                                $('#ai600_file_tree').fileTree({ script: 'connectors/ai600.php' }, function(file) {
+                                $('#ai600_file_tree').fileTree({ script: 'connectors/ai600.php', multiFolder: false }, function(file) {
 								
 									// check if its a directory
 									if (file.substr(file.length-1) == '/')
@@ -57,7 +57,7 @@
 									}
 								});
 								
-                                $('#ai600_rgb_file_tree').fileTree({ script: 'connectors/ai600_rgb.php' }, function(file) {
+                                $('#ai600_rgb_file_tree').fileTree({ script: 'connectors/ai600_rgb.php', multiFolder: false }, function(file) {
                                  
 									// check if its a directory
 									if (file.substr(file.length-1) == '/')
