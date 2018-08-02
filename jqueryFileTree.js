@@ -77,11 +77,9 @@ if(jQuery) (function($){
 								$(this).parent().find('UL').slideUp({ duration: o.collapseSpeed, easing: o.collapseEasing });
 								$(this).parent().removeClass('expanded').addClass('collapsed');
 							}
-							
-							console.log($(this).attr('rel'))
-							// return both dir and file
-							h($(this).attr('rel'));
 						}
+						// for both files and dirs
+						h($(this).attr('rel'));
 						return false;
 					});
 					// Prevent A from triggering the # on non-click events
